@@ -1,15 +1,16 @@
-# Audio fix for ShadowPlay
-This script fixes a few problems with ShadowPlay recordings:
-1. My mic was way quieter than my system audio so I recorded seperate tracks for them (an option in ShadowPlay settings)
-2. Video players cannot play 2 seperate tracks at once.
-3. My mic made noise and needed amplification.
+# Multitrack audio fixes for ShadowPlay (or other)
+This script fixes a few problems with video recordings:
+1. My mic was way quieter than my system audio, so I recorded them separately (an option in ShadowPlay settings)
+2. Video players cannot play 2 separate tracks at once.
+3. My microphone needed noise reduction and amplification.  
 
+This script removes mic noise, boosts mic audio, and combines tracks, all without encoding. 
 ## Requirements:
 ### Video
 Videos must have 2 audio tracks (system and microphone).
 ### FFmpeg
 Download: https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z  
-Extract somewhere and put the extraction path in 'Enviroment Variables'. Example:
+Extract somewhere and put the extraction path in 'Environment Variables'. Example:
 ```
 WIN+s -> 'system variables' -> Enviroment Variables... -> Path -> Edit -> New -> 'C:\ffmpeg\bin'
 ```
