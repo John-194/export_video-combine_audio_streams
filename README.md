@@ -4,7 +4,7 @@ This script fixes a few problems with video recordings:
 2. Video players cannot play 2 separate tracks at once.
 3. My microphone needed noise reduction and amplification.  
 
-This script removes mic noise, boosts mic audio, and combines tracks, all without encoding. 
+This script removes mic noise, boosts mic volume, and combines audio tracks, without encoding. 
 ## Requirements:
 ### Video
 Videos must have 2 audio tracks (system and microphone).
@@ -25,4 +25,5 @@ Since I further process the videos, I made the output a RAM disk with ImDisk, th
 pip install -r requirements.txt
 ```
 ## Usage
-Edit variables on line 51-54.
+1. Make a .wav file of your microphone noise.
+2. Edit variables on line 51-54.
