@@ -1,4 +1,7 @@
+numba
 noisereduce
 scipy
 pydub
 pathlib
+noisereduce
+pydub
