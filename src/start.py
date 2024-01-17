@@ -5,7 +5,7 @@ from src.ffmpeg import Ffmpeg
 from src.settings import *
 
 
-def start(input: Settings | Sequence[Settings]):
+def start(input: Settings | Sequence[Settings]) -> None:
   settings_set = set()  # removes duplicates
   try:
     settings_set.update(input.get_settings_for_files_if_dir())
