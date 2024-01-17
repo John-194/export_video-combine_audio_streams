@@ -1,14 +1,35 @@
-# Multitrack audio fixes for ShadowPlay (or other)
-This script fixes a few problems with video recordings:
-1. My mic was way quieter than my system audio, so I recorded them separately (an option in ShadowPlay settings)
-2. Video players cannot play 2 separate tracks at once.
-3. My microphone needed noise reduction and amplification.  
+# Multitrack audio merger for ShadowPlay (or other)
 
-This script removes mic noise, boosts mic volume, and combines audio tracks, without encoding. 
+## About this script
+
+### Problems by using ShadowPlay
+1. Microphone too quiet.
+2. Audible microphone noise.
+
+### To fix these problems
+1. Record a video with ShadowPlay settings -> "Audio" -> "Separate both tracks" selected.  
+   Note: video players cannot play both audio streams at once.
+2. Use this script.
+
+### How this script fixes the problems
+1. Amplifying microphone audio (optional).
+2. Reducing microphone noise (optional).
+3. Merging two audio streams into one.
+
+### For convenience, this script also allows
+1. Removal of audio streams.
+2. Encoding of videos to reduce size.
+
+### What it currently does not do:
+1. It does not allow cutting videos.  
+   You can use [VidCutter](https://github.com/ozmartian/vidcutter) for that. It can quickly cut videos without encoding.  
+   (note: using more than one 'chapter' will remove microphone audio track)
+2. Does not have a GUI.
+
 ## Requirements:
-### Video
-Videos must have 2 audio tracks (system and microphone).
+
 ### FFmpeg
+
 Download: https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z  
 Extract somewhere and put the extraction path in 'Environment Variables'. Example:
 ```
@@ -18,12 +39,16 @@ To test the installation, in a terminal type:
 ```
 ffmpeg -version
 ```
-FFmpeg works by making a copy of the original video (cannot overwrite original).   
-Since I further process the videos, I made the output a RAM disk with ImDisk, that is optional. 
+
 ### Packages
+
 ```
 pip install -r requirements.txt
 ```
+
 ## Usage
-1. Make a .wav file of your microphone noise.
-2. Edit variables on line 51-54.
+
+1. Data folder provides a noise .wav file. 
+If noise reduction doesn't work then Use [Audacity](https://www.audacityteam.org/) to record your mic noise accordingly.
+2. Settings are in `main.py`.
+3. You can provide a path to a single video or a folder to process many videos concurrently. 
